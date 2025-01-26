@@ -32,7 +32,8 @@ def xml_to_excel(xml_file):
 
         # Determine output Excel file path
         base_name = os.path.splitext(os.path.basename(xml_file))[0]
-        excel_file = os.path.join(os.path.dirname(__file__), f"{base_name}.xlsx")
+        output_dir = os.path.dirname(xml_file)
+        excel_file = os.path.join(output_dir, f"{base_name}.xlsx")
 
         # Save DataFrame to Excel
         df.to_excel(excel_file, index=False)
