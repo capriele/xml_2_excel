@@ -14,10 +14,12 @@ def remove_namespace(tag):
     """
     if '}' in tag:
         return tag.split('}', 1)[1]
+    '''
     if '_' in tag:
         tags = tag.split('_')
         if len(tags) > 2:
             return tags[-1]
+    '''
     return tag
 
 def extract_elements(element, common_data, prefix=""):
